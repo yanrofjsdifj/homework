@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>BMI計算器</title>
+</head>
+<head>
+<script>
+var BMI={};
+BMI.getBMI=function(a,b){
+var bmi=b/((a/100)*(a/100));
+return bmi;
+};
+
+function Cal(form){
+var a=eval(form.height.value);
+var b=eval(form.weight.value);
+var bmi=eval(form.BMI.value);
+var bmiValue =BMI.getBMI(a,b);
+form.BMI.value= bmiValue ;
+}
+</script>
+</head>
+<body>
+<form method=post>
+你的身高(cm):<input type="text" name="height"><br>
+<br/>
+你的體重(kg):<input type="text" name="weight"><br>
+<br/>
+<input type="button" value="開始計算" onclick="Cal(this.form)">
+<br/>
+您的BMI:<input type="text" name="BMI">
+</form>
+</body>
+</html>
